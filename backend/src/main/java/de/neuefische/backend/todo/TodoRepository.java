@@ -10,7 +10,7 @@ import java.util.Map;
 @Repository
 class TodoRepository {
 
-    private final Map<String, Todo> todos = new HashMap<>(Map.of("1", new Todo("1", "Test", TodoStatus.OPEN)));
+    private final Map<String, Todo> todos = new HashMap<>(Map.of("1", new Todo("1", "Test1Open", TodoStatus.OPEN),"2",new Todo("2","Test2Open",TodoStatus.OPEN),"3",new Todo("3","TestInProzess",TodoStatus.IN_PROGRESS),"4",new Todo("4","TestDone",TodoStatus.DONE)));
 
     public List<Todo> getAll() {
         return new ArrayList<>(todos.values());
