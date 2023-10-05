@@ -1,6 +1,6 @@
 
 import React from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {Todo} from "./Todo.ts";
 
 
@@ -16,6 +16,7 @@ export default function TodoDetails(props: TodoDetailsProps) {
     const currentTodo = props.todos.find((todo) => (todo.id === urlParams.id))
 
     return (
+        <>
         <div className={"TodoFile"}>
             {currentTodo
                 ? <>
@@ -27,6 +28,11 @@ export default function TodoDetails(props: TodoDetailsProps) {
                     <p>Todo not found</p>
                 </>
             }
+
         </div>
+    <Link to={"/"}>
+        <button >Zurück zur TodosGallery</button>
+    </Link>
+        </>
     );
 }

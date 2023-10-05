@@ -3,4 +3,6 @@ export type Todo = {
     description: string
     status: Status
 }
-type Status = "TODO" | "DOING" | "DONE"
+export type Status = "OPEN"|
+    "IN_PROGRESS"|
+    "DONE"
