@@ -33,7 +33,7 @@ export default function TodoCard(props: TodoCardProps) {
             </Link>
 
             {props.todo.status === 'DONE' && (
-                <button onClick={() => props.handleDeleteToDoMethod(props.todo.id)}>Löschen</button>
+                <button onClick={() => props.handleDeleteToDoMethod(props.todo.id)}  className={"button"}>Löschen</button>
             )}
 
 
@@ -45,11 +45,8 @@ export default function TodoCard(props: TodoCardProps) {
                             handleCloseModal={handleCloseEditModal}
                     />
                 )}
-            { props.todo.id && (<button onClick={handleEditClick} >Bearbeiten</button>)}
-                   {/* // 2 props.todo.id && (<button onClick={() => <EditTodoModal todo={props.todo} handleEditToDoMethod={props.handleEditToDoMethod}/>}>Bearbeiten</button>)
+            { props.todo.id && (<button onClick={handleEditClick}  className={"button"}>Bearbeiten</button>)}
 
-                // 1 alte version props.todo.id && (<button onClick={() => props.handleEditToDoMethod()}>Bearbeiten</button>)
-            */}
 
         </div>
     )

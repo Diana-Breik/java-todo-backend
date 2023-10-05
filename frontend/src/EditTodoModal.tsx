@@ -1,4 +1,4 @@
-
+import './App.css'
 import {Todo, Status} from "./Todo.ts";
 import {ChangeEvent, FormEvent, useState} from "react";
 
@@ -51,7 +51,7 @@ export default function EditTodoModal(props: EditTodoModalProps) {
                 <option value="IN_PROGRESS">In Progress</option>
                 <option value="DONE">Done</option>
             </select>
-            <button type="submit" >Änderungen speichern</button>
+            <button className={"button"} type="submit"  >Änderungen speichern</button>
             {/*<button onClick={props.handleCloseModal}>Abbrechen</button>*/}
             </form>
             </div>

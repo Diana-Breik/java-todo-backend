@@ -11,6 +11,9 @@ type TodosGalleryProps={
 }
 export default function TodosGallery(props: TodosGalleryProps){
 
+    const openTodos = props.todos.filter((todo) => todo.status === 'OPEN');
+    const inProgressTodos = props.todos.filter((todo) => todo.status === 'IN_PROGRESS');
+    const doneTodos = props.todos.filter((todo) => todo.status === 'DONE');
 
        // const listWithDONEStatus= props.todos.filter((todo) => todo.status === "DONE")
 
@@ -30,19 +33,46 @@ export default function TodosGallery(props: TodosGalleryProps){
     }
 
     return(
-        <div className={"TodoFile"}>
-           <h3>todo-list</h3>
-            {props.todos.map(todo => <TodoCard
-                key={todo.id}
-                todo={todo}
-                handleDeleteToDoMethod ={handleDeleteToDo}
-                handleEditToDoMethod = {handleEditToDo}
-            />)}
+        <div className={"todos-gallery"}>
+            <div className="column">
+                <h2>Offen</h2>
+                <Link to={"/add"}>
+                    <button  className={"button"}>Neue Aufgabe hinzufügen</button>
+                </Link>
+                {openTodos.map((todo) => (
+                    <TodoCard
+                        key={todo.id}
+                        todo={todo}
+                        handleDeleteToDoMethod ={handleDeleteToDo}
+                        handleEditToDoMethod = {handleEditToDo}
+                    />
+                ))}
 
+            </div>
 
-            <Link to={"/add"}>
-                <button >Neue Aufgabe hinzufügen</button>
-            </Link>
+            <div className="column">
+                <h2>In Bearbeitung</h2>
+                {inProgressTodos.map((todo) => (
+                    <TodoCard
+                        key={todo.id}
+                        todo={todo}
+                        handleDeleteToDoMethod ={handleDeleteToDo}
+                        handleEditToDoMethod = {handleEditToDo}
+                    />
+                ))}
+            </div>
+
+            <div className="column">
+                <h2>Erledigt</h2>
+                {doneTodos.map((todo) => (
+                    <TodoCard
+                        key={todo.id}
+                        todo={todo}
+                        handleDeleteToDoMethod ={handleDeleteToDo}
+                        handleEditToDoMethod = {handleEditToDo}
+                    />
+                ))}
+            </div>
 
         </div>
     )
