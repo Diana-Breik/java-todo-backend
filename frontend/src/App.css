@@ -85,3 +85,15 @@ h2 {
   padding: 30px;
   border: 1px solid #ccc;
 }
+.button-container {
+  display: flex;
+  justify-content: space-around;
+
+}
+.left-button {
+  margin-right: auto;
+}
+
+.right-button {
+  margin-left: auto;
+}
